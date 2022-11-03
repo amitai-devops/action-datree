@@ -69,7 +69,6 @@ function create_report() {
   if [[ $FAILED -gt 0 ]]; then
     echo "### Failed rules:" >>"$GITHUB_STEP_SUMMARY"
     echo "" >>"$GITHUB_STEP_SUMMARY"
-    cat $GITHUB_STEP_SUMMARY > summary.md
   else
     echo "### 🥳 All rules passed successfully! 🥳" >>"$GITHUB_STEP_SUMMARY"
     cat $GITHUB_STEP_SUMMARY > summary.md
@@ -115,6 +114,7 @@ function create_report() {
 
     ((INDEX = INDEX + 1))
   done
+  cat $GITHUB_STEP_SUMMARY > summary.md
 }
 
 if [ "$isHelmChart" = "true" ]; then
