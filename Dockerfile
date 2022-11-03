@@ -1,4 +1,4 @@
-FROM datree/datreeci
+FROM ghcr.io/explorium-ai/datreeci
 
 RUN apk add --no-cache jq
 
